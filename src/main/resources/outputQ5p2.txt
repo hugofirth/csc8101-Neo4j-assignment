@@ -1,0 +1,15 @@
++---------------------------------------+
+| result                                |
++---------------------------------------+
+| Node[134]{username:"@YourParamore"}   |
+| Node[156]{username:"@ZacDorgas"}      |
+| Node[167]{username:"@ikeara"}         |
+| Node[153]{username:"@lucy_lacrymosa"} |
+| Node[164]{username:"@andevers"}       |
+| Node[161]{username:"@lokallobaat"}    |
+| Node[166]{username:"@rohwit"}         |
+| Node[155]{username:"@SA_Paramore"}    |
+| Node[158]{username:"@paralovur"}      |
+| Node[162]{username:"@Pa"}             |
++---------------------------------------+
+10 rows

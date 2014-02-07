@@ -1,0 +1,15 @@
++--------------------------------------+
+| result                               |
++--------------------------------------+
+| Node[23]{username:"@chrissc85"}      |
+| Node[50]{username:"@poopclub"}       |
+| Node[59]{username:"@Haydasdorgas"}   |
+| Node[32]{username:"@justinbieber"}   |
+| Node[68]{username:"@146ParamorePH"}  |
+| Node[41]{username:"@ParamoreEh"}     |
+| Node[53]{username:"@Jencjoyous"}     |
+| Node[35]{username:"@TwittaParamore"} |
+| Node[8]{username:"@AnaRojasOk"}      |
+| Node[6]{username:"@usatoday"}        |
++--------------------------------------+
+10 rows

@@ -1,0 +1,15 @@
++--------------------------------------+
+| result                               |
++--------------------------------------+
+| Node[72]{username:"@tnycloseread"}   |
+| Node[247]{username:"@MTVNews"}       |
+| Node[240]{username:"@TeamHWilliams"} |
+| Node[161]{username:"@lokallobaat"}   |
+| Node[354]{username:"@producerkarin"} |
+| Node[366]{username:"@ArthurSays"}    |
+| Node[344]{username:"@KatGraham"}     |
+| Node[236]{username:"@xryanrussellx"} |
+| Node[294]{username:"@iamthedrifter"} |
+| Node[389]{username:"@Mr_Sark"}       |
++--------------------------------------+
+10 rows
