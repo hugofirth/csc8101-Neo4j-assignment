@@ -58,11 +58,11 @@ public class BasicCypherInteractionTest {
     }
 
     /**
-     * Utility method to facilitate reading output files for expected output
+     * Utility method to facilitate reading output files for expected output + ugly windows hack
      */
     private static String readFile(String path, Charset encoding) throws IOException
     {
-        Path filePath = FileSystems.getDefault().getPath(path);
+        Path filePath = Paths.get(FileSystems.getDefault().getPath(path).toString().replace("\\C:\\","C:\\"));
         byte[] encoded = Files.readAllBytes(filePath);
         return encoding.decode(ByteBuffer.wrap(encoded)).toString();
     }
