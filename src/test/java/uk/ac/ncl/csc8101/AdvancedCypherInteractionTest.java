@@ -62,7 +62,11 @@ public class AdvancedCypherInteractionTest {
      */
     private static String readFile(String path, Charset encoding) throws IOException
     {
-        Path filePath = Paths.get(FileSystems.getDefault().getPath(path).toString().replaceAll("^(/|\\\\\\\\)", ""));
+        if(System.getProperty("os.name").toLowerCase().startsWith("windows"))
+        {
+            path = path.replaceAll("^(/|\\\\)", "");
+        }
+        Path filePath = Paths.get(FileSystems.getDefault().getPath(path).toString());
         byte[] encoded = Files.readAllBytes(filePath);
         return encoding.decode(ByteBuffer.wrap(encoded)).toString();
     }
