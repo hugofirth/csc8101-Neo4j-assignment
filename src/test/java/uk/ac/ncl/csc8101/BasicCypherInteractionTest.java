@@ -62,7 +62,7 @@ public class BasicCypherInteractionTest {
      */
     private static String readFile(String path, Charset encoding) throws IOException
     {
-        Path filePath = Paths.get(FileSystems.getDefault().getPath(path).toString().replace("\\C:\\","C:\\"));
+        Path filePath = Paths.get(FileSystems.getDefault().getPath(path).toString().replaceAll("^(/|\\\\\\\\)", ""));
         byte[] encoded = Files.readAllBytes(filePath);
         return encoding.decode(ByteBuffer.wrap(encoded)).toString();
     }
