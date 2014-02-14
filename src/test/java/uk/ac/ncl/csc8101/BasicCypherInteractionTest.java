@@ -9,6 +9,7 @@ import org.neo4j.graphdb.factory.GraphDatabaseFactory;
 import org.neo4j.test.TestGraphDatabaseFactory;
 
 import java.io.IOException;
+import java.net.URISyntaxException;
 import java.nio.ByteBuffer;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
@@ -34,16 +35,15 @@ public class BasicCypherInteractionTest {
      * Create database, read expected output & setup interaction
      */
     @BeforeClass
-    public static void setup() throws IOException
-    {
+    public static void setup() throws IOException, URISyntaxException {
         String dbPath = System.getProperty("graph.db.path");
         graphDb = new GraphDatabaseFactory().newEmbeddedDatabase(dbPath);
         expectedOutput = new HashMap<>();
         //Read files
-        expectedOutput.put("outputQ1", readFile(BasicCypherInteractionTest.class.getResource("/outputQ1.txt").getPath(), StandardCharsets.UTF_8));
-        expectedOutput.put("outputQ2", readFile(BasicCypherInteractionTest.class.getResource("/outputQ2.txt").getPath(), StandardCharsets.UTF_8));
-        expectedOutput.put("outputQ3", readFile(BasicCypherInteractionTest.class.getResource("/outputQ3.txt").getPath(), StandardCharsets.UTF_8));
-        expectedOutput.put("outputQ4", readFile(BasicCypherInteractionTest.class.getResource("/outputQ4.txt").getPath(), StandardCharsets.UTF_8));
+        expectedOutput.put("outputQ1", readFile(BasicCypherInteractionTest.class.getResource("/outputQ1.txt").toURI().getPath(), StandardCharsets.UTF_8));
+        expectedOutput.put("outputQ2", readFile(BasicCypherInteractionTest.class.getResource("/outputQ2.txt").toURI().getPath(), StandardCharsets.UTF_8));
+        expectedOutput.put("outputQ3", readFile(BasicCypherInteractionTest.class.getResource("/outputQ3.txt").toURI().getPath(), StandardCharsets.UTF_8));
+        expectedOutput.put("outputQ4", readFile(BasicCypherInteractionTest.class.getResource("/outputQ4.txt").toURI().getPath(), StandardCharsets.UTF_8));
         //Setup Interaction
         interaction = new BasicCypherInteraction(graphDb);
     }

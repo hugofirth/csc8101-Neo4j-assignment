@@ -10,6 +10,7 @@ import org.neo4j.graphdb.factory.GraphDatabaseFactory;
 import org.neo4j.test.TestGraphDatabaseFactory;
 
 import java.io.IOException;
+import java.net.URISyntaxException;
 import java.nio.ByteBuffer;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
@@ -35,15 +36,14 @@ public class AdvancedCypherInteractionTest {
      * Create database, read expected output & setup interaction
      */
     @BeforeClass
-    public static void setup() throws IOException
-    {
+    public static void setup() throws IOException, URISyntaxException {
         String dbPath = System.getProperty("graph.db.path");
         graphDb = new GraphDatabaseFactory().newEmbeddedDatabase(dbPath);
         expectedOutput = new HashMap<>();
         //Read files
-        expectedOutput.put("outputQ5p1", readFile(AdvancedCypherInteraction.class.getResource("/outputQ5p1.txt").getPath(), StandardCharsets.UTF_8));
-        expectedOutput.put("outputQ5p2", readFile(AdvancedCypherInteraction.class.getResource("/outputQ5p2.txt").getPath(), StandardCharsets.UTF_8));
-        expectedOutput.put("outputQ5p3", readFile(AdvancedCypherInteraction.class.getResource("/outputQ5p3.txt").getPath(), StandardCharsets.UTF_8));
+        expectedOutput.put("outputQ5p1", readFile(AdvancedCypherInteraction.class.getResource("/outputQ5p1.txt").toURI().getPath(), StandardCharsets.UTF_8));
+        expectedOutput.put("outputQ5p2", readFile(AdvancedCypherInteraction.class.getResource("/outputQ5p2.txt").toURI().getPath(), StandardCharsets.UTF_8));
+        expectedOutput.put("outputQ5p3", readFile(AdvancedCypherInteraction.class.getResource("/outputQ5p3.txt").toURI().getPath(), StandardCharsets.UTF_8));
         //Setup Interaction
         interaction = new AdvancedCypherInteraction(graphDb);
     }
