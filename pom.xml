@@ -114,7 +114,7 @@
                     </includes>
                     <forkMode>once</forkMode>
                     <useFile>false</useFile>
-                    <argLine>-Xmx2g</argLine>
+                    <argLine>-Xmx1g</argLine>
                     <systemProperties>
                         <property>
                             <name>graph.db.path</name>
